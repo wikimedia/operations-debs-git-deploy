@@ -1,0 +1,2 @@
+git-deploy/* /usr/lib/git-deploy
+git-deploy.conf /etc/git-deploy

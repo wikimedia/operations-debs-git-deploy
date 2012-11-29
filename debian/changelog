@@ -1,0 +1,5 @@
+git-deploy (6.00-wmf1) precise-wikimedia; urgency=low
+
+  * Initial package
+
+ -- Ryan Lane <rlane@wikimedia.org>  Thu, 29 Nov 2012 23:12:02 +0000

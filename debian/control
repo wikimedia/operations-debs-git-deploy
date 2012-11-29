@@ -1,0 +1,11 @@
+Source: git-deploy
+Section: net
+Priority: extra
+Maintainer: Ryan Lane <rlane@wikimedia.org>
+Build-Depends: debhelper (>= 4)
+Standards-Version: 1.0
+
+Package: git-deploy
+Depends: git-core
+Architecture: all
+Description: git deployment system
