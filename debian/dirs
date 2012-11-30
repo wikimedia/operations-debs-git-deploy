@@ -1,2 +1,4 @@
 usr/lib/git-deploy
 etc/git-deploy
+var/log/git-deploy
+var/lib/git-deploy

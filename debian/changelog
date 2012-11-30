@@ -1,3 +1,27 @@
+git-deploy (6.00-wmf5) precise-wikimedia; urgency=low
+
+  * Add /var/lib/git-deploy directory
+
+ -- Ryan Lane <rlane@wikimedia.org>  Thu, 30 Nov 2012 00:38:54 +0000
+
+git-deploy (6.00-wmf4) precise-wikimedia; urgency=low
+
+  * Add link to git-deploy in /usr/local/bin
+
+ -- Ryan Lane <rlane@wikimedia.org>  Thu, 30 Nov 2012 00:29:49 +0000
+
+git-deploy (6.00-wmf3) precise-wikimedia; urgency=low
+
+  * Add log directory
+
+ -- Ryan Lane <rlane@wikimedia.org>  Thu, 29 Nov 2012 23:59:30 +0000
+
+git-deploy (6.00-wmf2) precise-wikimedia; urgency=low
+
+  * set $use_remote= 0 so that we don't push tags by default
+
+ -- Ryan Lane <rlane@wikimedia.org>  Thu, 29 Nov 2012 23:58:58 +0000
+
 git-deploy (6.00-wmf1) precise-wikimedia; urgency=low
 
   * Initial package

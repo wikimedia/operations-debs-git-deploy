@@ -23,13 +23,13 @@ configure-stamp:
 
 build: build-stamp
 
-build-stamp: configure-stamp  
+build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
 	touch $@
 
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp configure-stamp
@@ -42,7 +42,7 @@ clean:
 install: build
 	dh_testdir
 	dh_testroot
-	#dh_prep  
+	#dh_prep
 	dh_installdirs
 
 # Build architecture-independent files here.
@@ -55,7 +55,7 @@ binary-indep: install
 binary-arch: install
 	dh_testdir
 	dh_testroot
-#	dh_installchangelogs 
+#	dh_installchangelogs
 #	dh_installdocs
 #	dh_installexamples
 	dh_install
