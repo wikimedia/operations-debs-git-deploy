@@ -1,0 +1,68 @@
+--- a/git-deploy/bin/git-deploy
++++ b/git-deploy/bin/git-deploy
+@@ -712,6 +712,7 @@
+                 execute_deploy_hooks(
+                     phase   => "pre-start",
+                     prefix  => $prefix,
++		    force   => $force,
+                 );
+             } );    # this will die if there is a problem
+         do_fetch($remote_site);
+@@ -737,6 +738,7 @@
+         execute_deploy_hooks(
+             phase     => "pre-pull",
+             prefix    => $prefix,
++            force     => $force,
+             start_tag => $start_tag,
+         );
+         _info "Pruning dead remote branches";
+@@ -769,6 +771,7 @@
+             execute_deploy_hooks(
+                 phase     => $_,
+                 prefix    => $prefix,
++                force     => $force,
+                 start_tag => $start_tag,
+             ) for qw(post-pull post-tree-update);
+             $subject= "Starting live rollout of $prefix";
+@@ -849,6 +852,7 @@
+                 execute_deploy_hooks(
+                     phase   => "pre-sync",
+                     prefix  => $prefix,
++                    force   => $force,
+                     start_tag => $start_tag,
+                 );
+             } );
+@@ -926,6 +930,7 @@
+         execute_deploy_hooks(
+             phase   => "post-sync",
+             prefix  => $prefix,
++            force   => $force,
+             start_tag => $start_tag,
+             rollout_tag => $rollout_tag,
+         );
+@@ -1014,6 +1019,7 @@
+         execute_deploy_hooks(
+             phase   => "post-abort",
+             prefix  => $prefix,
++            force  => $force,
+         );
+ 
+         unlink_rollout_status_file();
+--- a/git-deploy/lib/Git/Deploy.pm
++++ b/git-deploy/lib/Git/Deploy.pm
+@@ -1436,6 +1436,7 @@
+ 
+     my $phase            = $args{phase}            || _die "Missing phase argument";
+     my $prefix           = $args{prefix}           || _die "Missing prefix argument";
++    my $force            = $args{force}            || 0;
+     my $ignore_exit_code = $args{ignore_exit_code} || 0;
+ 
+     my $root= get_hook_dir( $prefix )
+@@ -1443,6 +1444,7 @@
+ 
+     local $ENV{GIT_DEPLOY_PHASE}      = $phase;
+     local $ENV{GIT_DEPLOY_PREFIX}     = $prefix;
++    local $ENV{GIT_DEPLOY_FORCED}     = $force;
+ 
+     # the tag information, if provided
+     local $ENV{GIT_DEPLOY_START_TAG}  = $args{start_tag} if defined $args{start_tag};

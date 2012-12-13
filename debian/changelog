@@ -1,3 +1,9 @@
+git-deploy (6.00-wmf6) precise-wikimedia; urgency=low
+
+  * Pass force argument to sync scripts
+
+ -- Ryan Lane <rlane@wikimedia.org>  Wed, 13 Dec 2012 01:34:17 +0000
+
 git-deploy (6.00-wmf5) precise-wikimedia; urgency=low
 
   * Add /var/lib/git-deploy directory

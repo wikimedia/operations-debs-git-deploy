@@ -1,0 +1,11 @@
+--- a/git-deploy/bin/git-deploy
++++ b/git-deploy/bin/git-deploy
+@@ -350,7 +350,7 @@
+ ###################################################################################
+ my $list_all= 0;
+ my $check_clean= 1;
+-my $use_remote= 1;
++my $use_remote= 0;
+ 
+ my %legal_action= (
+     start    => 'start',

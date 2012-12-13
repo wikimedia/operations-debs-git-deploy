@@ -11,8 +11,6 @@ export DH_VERBOSE=1
 
 
 
-
-
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
@@ -22,6 +20,7 @@ configure-stamp:
 
 
 build: build-stamp
+	dh_quilt_patch
 
 build-stamp: configure-stamp
 	dh_testdir
@@ -42,7 +41,7 @@ clean:
 install: build
 	dh_testdir
 	dh_testroot
-	#dh_prep
+	dh_prep
 	dh_installdirs
 
 # Build architecture-independent files here.
